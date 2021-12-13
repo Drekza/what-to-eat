@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextMedium">
+        <item name="android:fontFamily">@font/font_medium</item>
+        <item name="android:textColor">?android:attr/textColor</item>
+    </style>
+
+    <style name="Button14Medium" parent="TextMedium">
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingMultiplier">1.18</item>
+        <item name="android:letterSpacing">0.05143</item> <!-- 0.72px / 14sp -->
+    </style>
+</resources>

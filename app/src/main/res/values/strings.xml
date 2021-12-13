@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">what_are_we_eating_today</string>
+    <string name="add_item">Добавить жральню</string>
+    <string name="foodDb">food_db</string>
+</resources>
