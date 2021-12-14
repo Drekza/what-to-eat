@@ -16,30 +16,23 @@ class WheelViewModel(
     private val _foodTypesList = MutableLiveData<List<FoodType>>()
     val foodTypesList = _foodTypesList.asLiveData()
 
-    init {
-        getFoodTypes()
-    }
-
-    private fun getFoodTypes() {
+    fun getFoodTypes() {
         viewModelScope.launch(Dispatchers.IO) {
             val foodTypes = wheelRepository.getFoodTypes()
-            withContext(Dispatchers.Main){
+            withContext(Dispatchers.Main) {
                 _foodTypesList.value = foodTypes
             }
         }
     }
 
     fun addFoodType(type: String) {
-        viewModelScope.launch(Dispatchers.IO) {
-            val foodType = FoodType(type = type)
-            wheelRepository.insertFoodType(foodType)
-        }
+        val foodType = FoodType(type = type)
+        wheelRepository.insertFoodType(foodType)
+        getFoodTypes()
     }
 
     fun clearFoodTypes() {
-        viewModelScope.launch(Dispatchers.IO) {
-            wheelRepository.deleteAllFoodTypes()
-        }
+        wheelRepository.deleteAllFoodTypes()
     }
 
 }

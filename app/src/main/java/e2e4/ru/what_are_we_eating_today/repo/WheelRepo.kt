@@ -5,7 +5,7 @@ import e2e4.ru.what_are_we_eating_today.models.domain.FoodType
 
 interface WheelRepo {
     suspend fun getFoodTypes(): List<FoodType>
-    suspend fun insertFoodType(foodType: FoodType)
+    fun insertFoodType(foodType: FoodType)
     suspend fun getFood(foodType: FoodType): Food
-    suspend fun deleteAllFoodTypes()
+    fun deleteAllFoodTypes()
 }

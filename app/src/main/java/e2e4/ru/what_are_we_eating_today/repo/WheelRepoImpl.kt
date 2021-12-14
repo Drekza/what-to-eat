@@ -16,11 +16,11 @@ class WheelRepoImpl(
         }
     }
 
-    override suspend fun insertFoodType(foodType: FoodType) {
+    override fun insertFoodType(foodType: FoodType) {
         foodWheelDao.insertFoodType(foodType.toEntity())
     }
 
-    override suspend fun deleteAllFoodTypes() {
+    override fun deleteAllFoodTypes() {
         foodWheelDao.deleteAllFoodTypes()
     }
 
@@ -30,7 +30,7 @@ class WheelRepoImpl(
 
     private fun FoodType.toEntity(): FoodTypeEntity {
         return FoodTypeEntity(
-            type = this.toString()
+            type = this.type
         )
     }
 

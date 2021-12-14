@@ -23,7 +23,7 @@ private fun provideDatabase(context: Context): AppDatabase {
         context,
         AppDatabase::class.java,
         context.getString(R.string.foodDb)
-    ).build()
+    ).allowMainThreadQueries().build()
 }
 
 private fun provideSearchHistoryDao(appDB: AppDatabase): FoodWheelDao = appDB.getFoodWheelDao()
